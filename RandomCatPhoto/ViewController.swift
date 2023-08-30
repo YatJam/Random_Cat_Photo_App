@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
-        button.setTitle("Random Phtot", for: .normal)
+        button.setTitle("Random Photo", for: .normal)
         button.setTitleColor(.black, for: .normal)
         
         return button
@@ -33,9 +33,17 @@ class ViewController: UIViewController {
         imageView.center = view.center
         
         view.addSubview(button)
-        button.frame = CGRect(x: 20, y: 0, width: view.frame.size.width-40, height: 50)
-        
         getRandomPhoto()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        button.frame = CGRect(
+            x: 20,
+            y: view.frame.size.height-50-view.safeAreaInsets.bottom,
+            width: view.frame.size.width-40,
+            height: 50)
     }
     
     func getRandomPhoto() {
