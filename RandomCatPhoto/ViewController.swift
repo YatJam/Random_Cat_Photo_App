@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     
     func getRandomPhoto() {
         let urlString =
-            "https://cataas.com/cat/cute/says/I%20love%20James"
+            "https://cataas.com/cat/cute/says/hello"
         let url = URL(string: urlString)!
         guard let data = try? Data(contentsOf: url) else{
             return
