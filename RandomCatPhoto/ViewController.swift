@@ -31,8 +31,12 @@ class ViewController: UIViewController {
         view.addSubview(imageView)
         imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
         imageView.center = view.center
-        
         view.addSubview(button)
+        getRandomPhoto()
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapButton(){
         getRandomPhoto()
     }
     
@@ -40,10 +44,10 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         button.frame = CGRect(
-            x: 20,
-            y: view.frame.size.height-50-view.safeAreaInsets.bottom,
-            width: view.frame.size.width-40,
-            height: 50)
+            x: 30,
+            y: view.frame.size.height-150-view.safeAreaInsets.bottom,
+            width: view.frame.size.width-60,
+            height: 55)
     }
     
     func getRandomPhoto() {
