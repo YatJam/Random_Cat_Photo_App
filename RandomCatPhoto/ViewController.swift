@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
-        button.setTitle("Random Photo", for: .normal)
+        button.setTitle("Get that random cat", for: .normal)
         button.setTitleColor(.black, for: .normal)
         
         return button
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
     
     func getRandomPhoto() {
         let urlString =
-            "https://source.unsplash.com/random/600x600"
+            "https://cataas.com/cat/cute/says/I%20love%20James"
         let url = URL(string: urlString)!
         guard let data = try? Data(contentsOf: url) else{
             return
